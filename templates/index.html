@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkers</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1 style="background-color: {{color_one}}; color: {{color_two}};">***Checkers***</h1>
+<div>
+    <table> 
+        <tbody class= "contenedor"> 
+            {% for y in range(td1)%}
+                <tr>{% for x in range(td2) %}
+                    {%if (x+y) % 2 == 0 %}
+                            <td class="cuadro"id= "rowabove"style= "background-color: {{color_two}};">
+                            </td>
+                        {% else%}
+                            <td class="cuadro"id= "rowbelow"style= "background-color: {{color_one}};">
+                            </td>
+                    {% endif %}
+                {% endfor %}
+             
+            </tr>
+            {%endfor%}
+        </tbody>
+    <div class="cuadro"></div>
+    
+</div>
+
+
+
+
+</body>
+</html>
